@@ -9,6 +9,8 @@ import NutritionTracker from './user-pages/NutritionTracker';
 import ExerciseTracking from './user-pages/ExerciseTracking';
 import MentalHealth from './user-pages/MentalHealth';
 import Meditation from './user-pages/mental_health/Meditation';
+import Exercise from './exercise/Exercise';
+import Uploadexercises from './exercise/UploadExercises';
 
 
 const LandPageWrapper = () => {
@@ -22,9 +24,11 @@ const LandPageWrapper = () => {
             <Route path='/logout' element={<Logout/>}/>
             <Route path='/user' element = {<UserDashboard/>} />
             <Route path='/user/nutrients' element = {<NutritionTracker/>} />
-            <Route path='/user/exercise' element = {<ExerciseTracking/>} />
+            <Route path='/user/exercise-tracking' element = {<ExerciseTracking/>} />
             <Route path='/user/mental-health' element = {<MentalHealth/>} />
             <Route path='/user/mental-health/meditation' element = {<Meditation/>} />
+            <Route path='/user/exercises' element = {<Exercise/>} />
+            <Route path='/user/exercises-form' element = {<Uploadexercises/>} />
           </Routes>
       </BrowserRouter>
         

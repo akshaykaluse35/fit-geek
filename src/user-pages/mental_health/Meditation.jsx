@@ -94,6 +94,37 @@ const Meditation = () => {
           </div>
         </div>
       </section>
+
+      <section>
+          <div className="link-card-header">Meditations for any mind, any mood, any goal</div>
+          <div className="link-card-container">
+              <div className="link-card">
+                  <h2>Meditation Benefits</h2>
+                  <h5>Meditation is a straightforward practice to help you look after your mind and improve your mental health. Learn what a regular practice can do for you.</h5>
+                  <ul>
+                      <li><a href="#">What if I don't notice meditation benefits right away?</a></li>
+                      <li>Meditation for stress</li>
+                  </ul>
+              </div>
+              <div className="link-card">
+                  <h2>Meditation Benefits</h2>
+                  <h5>Meditation is a straightforward practice to help you look after your mind and improve your mental health. Learn what a regular practice can do for you.</h5>
+                  <ul>
+                      <li><a href="#">What if I don't notice meditation benefits right away?</a></li>
+                      <li>Meditation for stress</li>
+                  </ul>
+              </div>
+              <div className="link-card">
+                  <h2>Meditation Benefits</h2>
+                  <h5>Meditation is a straightforward practice to help you look after your mind and improve your mental health. Learn what a regular practice can do for you.</h5>
+                  <ul>
+                      <li><a href="#">What if I don't notice meditation benefits right away?</a></li>
+                      <li>Meditation for stress</li>
+                  </ul>
+              </div>
+          </div>
+      </section>
+
       <Footer/>
     </>
   );
