@@ -1,7 +1,8 @@
 import React from 'react';
 import '../exercise/exercise.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
+import ExerciseCard from './ExerciseCard';
 
 const Exercises = () => {
 
@@ -21,7 +22,6 @@ const Exercises = () => {
 
     if(response.ok){
       const data = await response.json();
-      console.log(Object.keys(data));
       setResult(data);
       console.log(data);
     }else{
@@ -76,35 +76,7 @@ const Exercises = () => {
         </Button>
       </Box>
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
-        {/* <HorizontalScrollbar data={bodyParts} bodyParts setBodyPart={setBodyPart} bodyPart={bodyPart} /> */}
-        <div>
-          {result &&
-            result.map((result, index) => (
-              <div key={index}>
-                <h1>Object {index + 1}</h1>
-                <h1>Muscle Name: {result.Muscles}</h1>
-                <h1>Workout Type: {result.WorkOut}</h1>
-                <h1>Beginner Set: {result["Beginner Sets"]}</h1>
-                <h1>Equipment Name: {result.Equipment}</h1>
-                <h1>Explanation: {result.Explaination}</h1>
-                <h1>Expert Set: {result["Expert Sets"]}</h1>
-                <h1>Intensity Level: {result.Intensity_Level}</h1>
-                <h1>Intermediate Set: {result["Intermediate Sets"]}</h1>
-                <h1>Long Explanation: {result.LongExplanation}</h1>
-                <h1>Videos : {result.Video}</h1>
-
-                <iframe
-                    width="700"
-                    height="500"
-                    src={result.Video}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-              </div>
-            ))}
-        </div>
+          <ExerciseCard result={result} />
       </Box>
     </Stack>
   );

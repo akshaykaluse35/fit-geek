@@ -10,7 +10,10 @@ import ExerciseTracking from './user-pages/ExerciseTracking';
 import MentalHealth from './user-pages/MentalHealth';
 import Meditation from './user-pages/mental_health/Meditation';
 import Exercise from './exercise/Exercise';
-import Uploadexercises from './exercise/UploadExercises';
+// import Uploadexercises from './exercise/UploadExercises';
+// import MeditationSubPages from './Meditation-Pages/MeditationSubPages';
+import GratitudeMeditation from './Meditation-Pages/GratitudeMeditation';
+
 
 
 const LandPageWrapper = () => {
@@ -28,7 +31,8 @@ const LandPageWrapper = () => {
             <Route path='/user/mental-health' element = {<MentalHealth/>} />
             <Route path='/user/mental-health/meditation' element = {<Meditation/>} />
             <Route path='/user/exercises' element = {<Exercise/>} />
-            <Route path='/user/exercises-form' element = {<Uploadexercises/>} />
+            {/* <Route path='/user/exercises-form' element = {<Uploadexercises/>} /> */}
+            <Route path='/user/mental-health/meditation/gratitude-meditation' element = {<GratitudeMeditation/>} />
           </Routes>
       </BrowserRouter>
         

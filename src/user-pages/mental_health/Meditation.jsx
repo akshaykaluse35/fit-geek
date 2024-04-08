@@ -7,6 +7,16 @@ import NavbarMH from './NavbarMH';
 import cardImg from '../../images/med-card-1.png';
 // import medBGimage from '../../images/meditation-bg-image.png'
 import Footer from '../../footer/Footer';
+import medCardImage from '../../images/lady-with-pink-bg-meditation.jpg';
+import manInBlueMeditation from '../../images/man-in-blue-meditation.jpg';
+import ladyMeditationWithMatt from '../../images/lady-meditation-with-matt.jpg';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+
 const Meditation = () => {
   return (
     <>
@@ -46,9 +56,7 @@ const Meditation = () => {
         </div>
       </section>
 
-      <section>
-
-      </section>
+      <section></section>
 
       <section>
         <div class="cards-container">
@@ -95,37 +103,173 @@ const Meditation = () => {
         </div>
       </section>
 
-      <section>
-          <div className="link-card-header">Meditations for any mind, any mood, any goal</div>
-          <div className="link-card-container">
-              <div className="link-card">
-                  <h2>Meditation Benefits</h2>
-                  <h5>Meditation is a straightforward practice to help you look after your mind and improve your mental health. Learn what a regular practice can do for you.</h5>
-                  <ul>
-                      <li><a href="#">What if I don't notice meditation benefits right away?</a></li>
-                      <li>Meditation for stress</li>
-                  </ul>
-              </div>
-              <div className="link-card">
-                  <h2>Meditation Benefits</h2>
-                  <h5>Meditation is a straightforward practice to help you look after your mind and improve your mental health. Learn what a regular practice can do for you.</h5>
-                  <ul>
-                      <li><a href="#">What if I don't notice meditation benefits right away?</a></li>
-                      <li>Meditation for stress</li>
-                  </ul>
-              </div>
-              <div className="link-card">
-                  <h2>Meditation Benefits</h2>
-                  <h5>Meditation is a straightforward practice to help you look after your mind and improve your mental health. Learn what a regular practice can do for you.</h5>
-                  <ul>
-                      <li><a href="#">What if I don't notice meditation benefits right away?</a></li>
-                      <li>Meditation for stress</li>
-                  </ul>
-              </div>
-          </div>
-      </section>
+      <div className="link-card-container">
+        <div
+          className="link-card"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <Card
+            sx={{
+              maxWidth: 500,
+              margin: "auto",
+              transition: "box-shadow o.8s",
+              "&:hover": {
+                boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.5)", // Adjust the values as needed
+              }, backgroundColor: "#F9F4F2",
+              borderRadius: "15px"
+            }}
+          >
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="350"
+                image={medCardImage}
+                alt="green iguana"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <h2>Guided Meditation</h2>
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  From courses, single exercises, and bite-sized sessions,
+                  Headspace teachers provide guided meditations to help you
+                  navigate whatever life throws your way.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions sx={{ margin: "15px" }}>
+              <ul className='links-a-tag'>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">Body scan meditation to reduce stress</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem" , textDecoration: "underline"}}>
+                  <a href="#">Gratitude meditation</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem" , textDecoration: "underline"}}>
+                  <a href="#">Walking meditation</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem" , textDecoration: "underline"}}>
+                  <a href="#">Running meditation</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">Meditation for compassion</a>
+                </li>
+              </ul>
+            </CardActions>
+          </Card>
+        </div>
 
-      <Footer/>
+        <div
+          className="link-card"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <Card
+            sx={{
+              maxWidth: 500,
+              margin: "auto",
+              transition: "box-shadow o.8s",
+              "&:hover": {
+                boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.5)", // Adjust the values as needed
+              }, backgroundColor: "#F9F4F2",
+              borderRadius: "15px"
+            }}
+          >
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="350"
+                image={manInBlueMeditation}
+                alt="green iguana"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <h2>Meditation benefits</h2>
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Meditation is a straightforward practice to help you look
+                  after your mind and improve your mental health. Learn what a
+                  regular practice can do for you.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions sx={{ margin: "15px" }}>
+              <ul>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">Body scan meditation to reduce stress</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">Gratitude meditation</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">Walking meditation</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">Running meditation</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">Meditation for compassion</a>
+                </li>
+              </ul>
+            </CardActions>
+          </Card>
+        </div>
+
+        <div
+          className="link-card"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <Card
+            sx={{
+              maxWidth: 500,
+              margin: "auto",
+              transition: "box-shadow o.8s",
+              "&:hover": {
+                boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.5)", // Adjust the values as needed
+              }, backgroundColor: "#F9F4F2",
+              borderRadius: "15px"
+            }}
+          >
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="428"
+                image={ladyMeditationWithMatt}
+                alt="green iguana"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <h2>How to meditate</h2>
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  You couldn't be in better hands when it comes to learning how
+                  to meditate. Read up on all the latest guidance and tips to
+                  get your practice started.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions sx={{ margin: "15px", textDecoration: "underline" }}>
+              <ul>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">How to meditate</a>
+                </li>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">
+                    What is the difference between thinking and meditating?
+                  </a>
+                </li>
+                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                  <a href="#">
+                    What the Noting Technique is, and how to take advantage of
+                    it
+                  </a>
+                </li>
+              </ul>
+            </CardActions>
+          </Card>
+        </div>
+      </div>
+
+      <Footer />
     </>
   );
 }
