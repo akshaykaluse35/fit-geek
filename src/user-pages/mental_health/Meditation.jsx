@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import medImage from '../../images/meditation.svg';
 import '../../user-pages/nutritionTrackerStyling.css';
 import '../../styles/meditation.css';
@@ -10,12 +11,18 @@ import Footer from '../../footer/Footer';
 import medCardImage from '../../images/lady-with-pink-bg-meditation.jpg';
 import manInBlueMeditation from '../../images/man-in-blue-meditation.jpg';
 import ladyMeditationWithMatt from '../../images/lady-meditation-with-matt.jpg';
+import girlMeditatingBluePurple from '../../images/girl-meditating-blue-purple.svg'
+import girlMeditatingWithBrownHairsPurpleTshirt from '../../images/girl-meditating-with-brown-hairs-purple-tshirt.svg'
+import girlMeditatingWithRedishHairsNoBg from '../../images/girl-meditating-with-redish-hairs-no-bg.svg'
+import girlMeditatingRedTshirtBluePants from '../../images/girl-meditating-red-tshirt-blue-pants.svg'
+import girlMeditatingLeavesBg from '../../images/girl-meditating-leaves-bg.svg'
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import audioMed from "../../audio-files/mainAudio.wav"
 
 const Meditation = () => {
   return (
@@ -39,7 +46,7 @@ const Meditation = () => {
             </div>
             <div className="med-info-audio-container">
               hey this is audio section
-              <AudioPlayer />
+              <AudioPlayer audioFile={audioMed}/>
             </div>
             <div className="med-info-btn">
               <button>Try for free!!</button>
@@ -59,45 +66,90 @@ const Meditation = () => {
       <section></section>
 
       <section>
-        <div class="cards-container">
+        <div class="cards-container" >
+        
           <div class="card">
-            <img src={cardImg} alt="" srcset="" height="300px" width="300px" />
-            <h1>This is card</h1>
+            <img
+              src={girlMeditatingBluePurple}
+              alt=""
+              srcset=""
+              height="300px"
+              width="300px"
+            />
+            <Link to="/user/mental-health/meditation/visual-meditation"><h1>Visualization meditation</h1></Link>
+            
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-              quisquam.
+              Visualisation Meditation is a common meditation technique
+              spiritual leaders and psychotherapists use. Alternative medicine,
+              such as Reiki, helps the meditator achieve relaxation, peace of
+              mind and healing.
             </p>
           </div>
           <div class="card">
-            <img src={cardImg} alt="" srcset="" height="300px" width="300px" />
-            <h1>This is card 2</h1>
+            <img
+              src={girlMeditatingWithBrownHairsPurpleTshirt}
+              alt=""
+              srcset=""
+              height="300px"
+              width="300px"
+            />
+            <Link to="/"><h1>Transcendental Meditation</h1></Link>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-              quisquam.
+              Maharishi Mahesh Yogi founded Transcendental Meditation (™). It is
+              a silent type of Meditation that is practiced daily for 15-20
+              minutes. It involves silently chanting a mantra.
             </p>
           </div>
           <div class="card">
-            <img src={cardImg} alt="" srcset="" height="300px" width="300px" />
-            <h1>This is card 3</h1>
+            <img
+              src={girlMeditatingWithRedishHairsNoBg}
+              alt=""
+              srcset=""
+              height="300px"
+              width="300px"
+            />
+            
+            
+            <Link to="/"><h1>Guided Meditation</h1></Link>
+
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-              quisquam.
+              Guided meditation, which is sometimes also called guided imagery
+              or visualization, is a method of meditation in which you form
+              mental pictures or situations that you find relaxing.
             </p>
           </div>
           <div class="card">
-            <img src={cardImg} alt="" srcset="" height="300px" width="300px" />
-            <h1>This is card 4</h1>
+            <img
+              src={girlMeditatingRedTshirtBluePants}
+              alt=""
+              srcset=""
+              height="300px"
+              width="300px"
+            />
+              <Link to="/"><h1>Vipassana Meditation (Sayagyi U Ba Khin Tradition)</h1></Link>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-              quisquam.
+              An ancient Indian form of meditation, vipassana means to see
+              things as they really are. It dates back more than 2,500 years and
+              is credited for the mindfulness meditation movement in the United
+              States.
             </p>
           </div>
           <div class="card">
-            <img src={cardImg} alt="" srcset="" height="300px" width="300px" />
-            <h1>This is card 5</h1>
+            <img
+              src={girlMeditatingLeavesBg}
+              alt=""
+              srcset=""
+              height="300px"
+              width="300px"
+            />
+            <Link to="/"><h1>Chakra Meditation</h1></Link>
+
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-              quisquam.
+              Chakra is an ancient Sanskrit word that translates to “wheel,” and
+              can be traced back to India. Chakras refer to the centers of
+              energy and spiritual power in the body. There are thought to be
+              seven chakras. Each chakra is located at a different part of the
+              body along the spine, and each has a corresponding color.
             </p>
           </div>
         </div>
@@ -115,8 +167,9 @@ const Meditation = () => {
               transition: "box-shadow o.8s",
               "&:hover": {
                 boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.5)", // Adjust the values as needed
-              }, backgroundColor: "#F9F4F2",
-              borderRadius: "15px"
+              },
+              backgroundColor: "#F9F4F2",
+              borderRadius: "15px",
             }}
           >
             <CardActionArea>
@@ -138,20 +191,45 @@ const Meditation = () => {
               </CardContent>
             </CardActionArea>
             <CardActions sx={{ margin: "15px" }}>
-              <ul className='links-a-tag'>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+              <ul className="links-a-tag">
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Body scan meditation to reduce stress</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem" , textDecoration: "underline"}}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Gratitude meditation</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem" , textDecoration: "underline"}}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Walking meditation</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem" , textDecoration: "underline"}}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Running meditation</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Meditation for compassion</a>
                 </li>
               </ul>
@@ -170,8 +248,9 @@ const Meditation = () => {
               transition: "box-shadow o.8s",
               "&:hover": {
                 boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.5)", // Adjust the values as needed
-              }, backgroundColor: "#F9F4F2",
-              borderRadius: "15px"
+              },
+              backgroundColor: "#F9F4F2",
+              borderRadius: "15px",
             }}
           >
             <CardActionArea>
@@ -194,19 +273,44 @@ const Meditation = () => {
             </CardActionArea>
             <CardActions sx={{ margin: "15px" }}>
               <ul>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Body scan meditation to reduce stress</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Gratitude meditation</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Walking meditation</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Running meditation</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">Meditation for compassion</a>
                 </li>
               </ul>
@@ -225,8 +329,9 @@ const Meditation = () => {
               transition: "box-shadow o.8s",
               "&:hover": {
                 boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.5)", // Adjust the values as needed
-              }, backgroundColor: "#F9F4F2",
-              borderRadius: "15px"
+              },
+              backgroundColor: "#F9F4F2",
+              borderRadius: "15px",
             }}
           >
             <CardActionArea>
@@ -249,15 +354,30 @@ const Meditation = () => {
             </CardActionArea>
             <CardActions sx={{ margin: "15px", textDecoration: "underline" }}>
               <ul>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">How to meditate</a>
                 </li>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">
                     What is the difference between thinking and meditating?
                   </a>
                 </li>
-                <li style={{ marginBottom: "1.5rem", textDecoration: "underline" }}>
+                <li
+                  style={{
+                    marginBottom: "1.5rem",
+                    textDecoration: "underline",
+                  }}
+                >
                   <a href="#">
                     What the Noting Technique is, and how to take advantage of
                     it
