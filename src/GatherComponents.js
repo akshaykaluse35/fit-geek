@@ -14,7 +14,7 @@ import Exercise from './exercise/Exercise';
 // import MeditationSubPages from './Meditation-Pages/MeditationSubPages';
 import GratitudeMeditation from './Meditation-Pages/GratitudeMeditation';
 import VisualMeditation from './Meditation-Pages/VisualMeditation';
-import WalkingMeditation from './Meditation-Pages/WalkingMeditation';
+import TranscandelMeditation from './Meditation-Pages/TranscandelMeditation';
 
 
 
@@ -34,8 +34,9 @@ const LandPageWrapper = () => {
             <Route path='/user/mental-health/meditation' element = {<Meditation/>} />
             <Route path='/user/exercises' element = {<Exercise/>} />
             {/* <Route path='/user/exercises-form' element = {<Uploadexercises/>} /> */}
-            <Route path='/user/mental-health/meditation/gratitude-meditation' element = {<WalkingMeditation/>} />
+            <Route path='/user/mental-health/meditation/gratitude-meditation' element = {<GratitudeMeditation/>} />
             <Route path='/user/mental-health/meditation/visual-meditation' element = {<VisualMeditation/>} />
+            <Route path='/user/mental-health/meditation/transcandel-meditation' element = {<TranscandelMeditation/>} />
           </Routes>
       </BrowserRouter>
         

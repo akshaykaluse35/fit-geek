@@ -93,7 +93,7 @@ const Meditation = () => {
               height="300px"
               width="300px"
             />
-            <Link to="/"><h1>Transcendental Meditation</h1></Link>
+            <Link to="/user/mental-health/meditation/transcandel-meditation"><h1>Transcendental Meditation</h1></Link>
             <p>
               Maharishi Mahesh Yogi founded Transcendental Meditation (™). It is
               a silent type of Meditation that is practiced daily for 15-20
