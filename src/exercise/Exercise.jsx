@@ -3,20 +3,21 @@ import '../exercise/exercise.css';
 import { useState } from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import ExerciseCard from './ExerciseCard';
+import BodyPart from './BodyPart';
 
 const Exercises = () => {
-
-  const [search, setSearch] = useState('Hello');
+//https://exercisedb.p.rapidapi.com/exercises/bodyPart/back?limit=10&offset=0
+  const [search, setSearch] = useState('');
   const [result, setResult] = useState('');
 
   const res = async() => {
     try {
       console.log("hello");
-      const response = await fetch(`https://work-out-api1.p.rapidapi.com/search?Muscles=${search}`,{
+      const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${search}?limit=10&offset=0`,{
         method: 'GET',
         headers: {
           'X-RapidAPI-Key': '05aa805bf4mshb3cfc1201643550p1cfa2ajsn6f06fc725d8c',
-          'X-RapidAPI-Host': 'work-out-api1.p.rapidapi.com'
+          'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
       });
 
@@ -34,6 +35,7 @@ const Exercises = () => {
 
 
   return (
+    
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography
         fontWeight={700}
@@ -75,10 +77,17 @@ const Exercises = () => {
           Search
         </Button>
       </Box>
+
+      <Box sx={{  flexWrap: 'wrap', display: 'flex' }}>
+          <BodyPart/>
+      </Box>
+
+
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
           <ExerciseCard result={result} />
       </Box>
     </Stack>
+    
   );
 };
 
