@@ -1,11 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react'
 import styles from "../styles/AudioPlayer.module.css";
-import { BsArrowLeftShort } from "react-icons/bs";
-import { BsArrowRightShort } from "react-icons/bs";
-import { FaPlay } from "react-icons/fa";
-import { FaPause } from "react-icons/fa";
+import { BsArrowLeftShort } from "react-icons/bs"
+import { BsArrowRightShort } from "react-icons/bs"
+import { FaPlay } from "react-icons/fa"
+import { FaPause } from "react-icons/fa"
+import mainAudio from '../audio-files/mainAudio.wav'
 
-const AudioPlayer = ({ audioFile }) => {
+const AudioPlayer = () => {
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -43,11 +44,9 @@ const AudioPlayer = ({ audioFile }) => {
   }
 
   const whilePlaying = () => {
-    if (audioPlayer.current) {
-      progressBar.current.value = audioPlayer.current.currentTime;
-      changePlayerCurrentTime();
-      animationRef.current = requestAnimationFrame(whilePlaying);
-    }
+    progressBar.current.value = audioPlayer.current.currentTime;
+    changePlayerCurrentTime();
+    animationRef.current = requestAnimationFrame(whilePlaying);
   }
 
   const changeRange = () => {
@@ -72,7 +71,7 @@ const AudioPlayer = ({ audioFile }) => {
 
   return (
     <div className={styles.audioPlayer}>
-      <audio ref={audioPlayer} src={audioFile} preload="metadata"></audio>
+      <audio ref={audioPlayer} src={mainAudio} preload="metadata"></audio>
       <button className={styles.forwardBackward} onClick={backThirty}><BsArrowLeftShort /> 30</button>
       <button onClick={togglePlayPause} className={styles.playPause}>
         {isPlaying ? <FaPause /> : <FaPlay className={styles.play} />}
@@ -93,4 +92,4 @@ const AudioPlayer = ({ audioFile }) => {
   )
 }
 
-export { AudioPlayer };
+export { AudioPlayer }
